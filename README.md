@@ -1,0 +1,2 @@
+# YouTube_subtitle
+YouTubuの英語字幕をいい感じのtextにしてくれる
