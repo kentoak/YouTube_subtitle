@@ -1,7 +1,7 @@
 # YouTube_subtitle
 YouTubuの英語字幕をDeepLで日本語訳にしてくれる。
 
-<img width="833" alt="スクリーンショット 2021-06-25 1 20 29" src="https://user-images.githubusercontent.com/43945931/123298816-d8b9f700-d553-11eb-98c6-a3a95ff43928.png">
+<img width="1120" alt="スクリーンショット 2021-06-26 9 16 08" src="https://user-images.githubusercontent.com/43945931/123495564-3be48000-d65f-11eb-9af7-2ba3a34897aa.png">
 
 
 # Usage
