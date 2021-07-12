@@ -13,25 +13,61 @@ def main():
     sc=""
     with open(file) as f:
         l=[s for s in f.readlines()]
+        
     #print(l)
     u=3
+
     for i in range(len(l)):
-        if re.fullmatch('\d\d:\d\d\n',l[i]):
+        l[i]=l[i].replace('\n','')
+        
+        if re.fullmatch('\d\d:\d\d',l[i]):
             u+=1
             if u>=4:
-                if re.match('\d\d:59\n',l[i]) or re.match('\d\d:29\n',l[i]):
+                if re.match('\d\d:59',l[i]):
+                    tao=re.match('\d\d:59',l[i]).group()
                     u=0
-                elif re.match('\d\d:00\n',l[i]) or re.match('\d\d:30\n',l[i]):
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:29',l[i]):
+                    tao=re.match('\d\d:29',l[i]).group()
                     u=0
-                elif re.match('\d\d:01\n',l[i]) or re.match('\d\d:31\n',l[i]):
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:00',l[i]):
+                    tao=re.match('\d\d:00',l[i]).group()
                     u=0
-                elif re.match('\d\d:02\n',l[i]) or re.match('\d\d:32\n',l[i]):
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:30',l[i]):
+                    tao=re.match('\d\d:30',l[i]).group()
                     u=0
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:01',l[i]):
+                    tao=re.match('\d\d:01',l[i]).group()
+                    u=0
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:31',l[i]):
+                    tao=re.match('\d\d:31',l[i]).group()
+                    u=0
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:02',l[i]):
+                    tao=re.match('\d\d:02',l[i]).group()
+                    u=0
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
+                elif re.match('\d\d:32',l[i]):
+                    tao=re.match('\d\d:32',l[i]).group()
+                    u=0
+                    rep='\n'+tao+'\n'
+                    l[i]=re.sub('^[0-9]{2}:[0-9]{2}',rep,l[i])
             #print(u)
             if u==0:
                 pass
             else:
-                l[i]=""
+                l[i]=" "
         sc+=l[i]
     #print(sc)
     with open('out_'+file,'w') as fw:
