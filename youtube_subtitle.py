@@ -9,7 +9,11 @@ def main():
     file=""
     for i in range(len(sys.argv)-2):
         file+=sys.argv[i+1]+" "
-    file+=sys.argv[-1]+'.txt'
+    tao=sys.argv[-1]
+    if tao[-4:]=='.txt':
+        file+=sys.argv[-1]
+    else:
+        file+=sys.argv[-1]+'.txt'
     sc=""
     with open(file) as f:
         l=[s for s in f.readlines()]
