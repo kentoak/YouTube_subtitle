@@ -1,22 +1,26 @@
 {
-    "name": "My U2bmemo",
-    "description": "Extension for memo to delete halfspace and improve sentence",
+    "name": "My U2Bmemo",
+    "description": "Extension for memo for U2Be",
     "version": "1.0",
-    "content_scripts": [
-        {
-          "matches": ["http://*/*", "https://*/*"],
-          "js": ["js/halfSpaceDelete.js"],
-          "css": ["css/contents.css"]
-        }
-      ],
-      "icons": {
-        "48": "u2.png"
-      },
-    "manifest_version": 3,
-    "action": {
-      "default_icon": {
-        "32": "u2.png"
-      },
-      "default_popup": "index.html"
+    "icons": {
+      "48": "u2.png"
+    },
+    "manifest_version": 2,
+    "browser_action":{
+        "default_icon": {"48":"u2.png"},
+        "default_title": "U2メモ！",
+        "default_popup": "index.html"
+    },
+    "permissions": ["tabs"],
+    
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+        "default": "Alt+U",
+        "windows": "Alt+U",
+        "mac": "Alt+U"
+        },
+        "description": "U2Bメモ"
+      }
     }
 }
